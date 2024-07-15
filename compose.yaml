@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: food
+      POSTGRES_PASSWORD: food123
+      POSTGRES_DB: cardapio_digital_db
+    ports:
+      - "5433:5432"  # Mapeando a porta local 5433 para a 5432 do contêiner
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
+
